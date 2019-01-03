@@ -1,3 +1,5 @@
+import { CounterService } from './counter.service';
+import { ActivationService } from './activation.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +20,7 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ActivationService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

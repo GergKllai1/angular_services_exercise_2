@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ActivationService]
+
 })
 export class AppComponent {
   activeUsers = this.activationService.activeUsers;

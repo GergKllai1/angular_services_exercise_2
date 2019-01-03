@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 import { ActivationService } from '../activation.service';
+import { CounterService } from '../counter.service';
 
 @Component({
   selector: 'app-inactive-users',
@@ -9,7 +10,7 @@ import { ActivationService } from '../activation.service';
 export class InactiveUsersComponent {
   @Input() users: string[];
 
-  constructor(private activationService: ActivationService) {}
+  constructor(private activationService: ActivationService, public counterService: CounterService) {}
 
   onSetToActive(id: number) {
     this.activationService.onSetToActive(id);
