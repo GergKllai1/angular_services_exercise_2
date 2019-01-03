@@ -8,14 +8,10 @@ import { Component } from '@angular/core';
   providers: [ActivationService]
 })
 export class AppComponent {
-  activeUsers = [];
-  inactiveUsers = [];
+  activeUsers = this.activationService.activeUsers;
+  inactiveUsers = this.activationService.inactiveUsers;
 
   // tslint:disable-next-line:no-shadowed-variable
-  constructor(private ActivationService: ActivationService) {
-    this.activeUsers = ActivationService.activeUsers;
-    this.inactiveUsers = ActivationService.inactiveUsers;
+  constructor(private activationService: ActivationService) {
   }
-
-
 }
