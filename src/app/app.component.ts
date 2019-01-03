@@ -1,21 +1,21 @@
+import { ActivationService } from './activation.service';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ActivationService]
 })
 export class AppComponent {
-  activeUsers = ['Max', 'Anna'];
-  inactiveUsers = ['Chris', 'Manu'];
+  activeUsers = [];
+  inactiveUsers = [];
 
-  onSetToInactive(id: number) {
-    this.inactiveUsers.push(this.activeUsers[id]);
-    this.activeUsers.splice(id, 1);
+  // tslint:disable-next-line:no-shadowed-variable
+  constructor(private ActivationService: ActivationService) {
+    this.activeUsers = ActivationService.activeUsers;
+    this.inactiveUsers = ActivationService.inactiveUsers;
   }
 
-  onSetToActive(id: number) {
-    this.activeUsers.push(this.inactiveUsers[id]);
-    this.inactiveUsers.splice(id, 1);
-  }
+
 }
